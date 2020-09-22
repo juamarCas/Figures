@@ -131,8 +131,8 @@ int main(void)
 	std::cout << glGetString(GL_VERSION) << std::endl;
 	{
 		//setting up graphics properties
-		float rate = 0.001f, size = 5.0f;
-		float red = 0.2f, green = 0.3f, blue = 0.8f;
+		float rate, size;
+		float red, green, blue;
 		std::string animation = "Side"; 
 		std::string figureType = "Square"; 
 
@@ -145,17 +145,27 @@ int main(void)
 		//Configuring Colors
 		param = "-Color"; 
 		var = "red"; 
-		SetConfiguration(&red, path, param, var, symbol);	
+		SetConfiguration(&red, path, param, var, symbol);
+
 		var = "green";
-		symbol = "=";
 		SetConfiguration(&green, path, param, var, symbol);	
+
 		var = "blue"; 
 		SetConfiguration(&blue, path, param, var, symbol);
 		
-		//configuring animations
-		param = "-Animation"; 
+		//configuring animations and other characteristics
+		param = "-Characteristic"; 
 		var = "animation"; 
 		SetConfiguration(&animation, path, param, var, symbol); 
+
+		var = "size"; 
+		SetConfiguration(&size, path, param, var, symbol);
+
+		var = "rate"; 
+		SetConfiguration(&rate, path, param, var, symbol);
+
+		
+		
 		
 		//define the figure and setting animator
 		Figure * figure = new Square(5.0f, 0.0f, 0.0f, red, green, blue);
