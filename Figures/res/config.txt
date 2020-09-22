@@ -1,9 +1,9 @@
--Figure type = Square
 
 -Color red =  1.0
 -Color green = 0.5
 -Color blue = 1.0
 
+-Charasteristic type = Square
 -Characteristic rate = 0.005
 -Characteristic size = 4
 -Characteristic animation = Side

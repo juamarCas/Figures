@@ -12,7 +12,7 @@ void Square::SetPos()  {
 	
 	//with the center, it obtains the vertex
 	position = new float[8];
-	index = new unsigned int[6];
+	
 	position[0] = centerX - size / 2.0f / 10.0f;
 	position[1] = centerY - size / 2.0f / 10.0f; //0
 	position[2] = centerX + size / 2.0f / 10.0f;
@@ -26,6 +26,7 @@ void Square::SetPos()  {
 }
 
 void Square::SetIndex() {
+	index = new unsigned int[6];
 	index[0] = 0;
 	index[1] = 1;
 	index[2] = 2;

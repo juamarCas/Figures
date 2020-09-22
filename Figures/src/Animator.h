@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Figure.h"
 #include <string>
+#include <math.h>
 class Animator {
 
 private:

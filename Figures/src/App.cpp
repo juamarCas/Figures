@@ -10,6 +10,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "Square.h"
+#include "Polygon.h"
 #include "Animator.h"
 
 #define WIDTH 640
@@ -133,14 +134,15 @@ int main(void)
 		//setting up graphics properties
 		float rate, size;
 		float red, green, blue;
-		std::string animation = "Side"; 
-		std::string figureType = "Square"; 
+		std::string animation; 
+		std::string figureType; 
 
 		//configuring variables
 		std::string path = "res/config.txt"; 
+		std::string symbol = "=";
 		std::string param;
 		std::string var;
-		std::string symbol = "=";
+		
 
 		//Configuring Colors
 		param = "-Color"; 
@@ -163,12 +165,10 @@ int main(void)
 
 		var = "rate"; 
 		SetConfiguration(&rate, path, param, var, symbol);
-
-		
-		
-		
+	
 		//define the figure and setting animator
-		Figure * figure = new Square(5.0f, 0.0f, 0.0f, red, green, blue);
+		Figure * figures = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6);
+		Figure * figure = new Square(size, 0.0f, 0.0f, red, green, blue);
 		Animator anim(figure, rate); 
 
 		//preparing the figure to be displayed
