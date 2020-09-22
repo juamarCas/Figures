@@ -4,6 +4,7 @@ Square::Square(float size, float centerX, float centerY, float red, float green,
 
 	//Defining the figure, in this case is a square
 	vertexCount = 8;
+	indexCount = 6; 
 	SetPos(); 
 	SetIndex(); 
 }

@@ -116,7 +116,7 @@ int main(void)
 
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(WIDTH, HEIGHT, "Figures", NULL, NULL);
+	window = glfwCreateWindow(WIDTH, HEIGHT, "figure", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -165,17 +165,31 @@ int main(void)
 
 		var = "rate"; 
 		SetConfiguration(&rate, path, param, var, symbol);
+
+		var = "figure"; 
+		SetConfiguration(&figureType, path, param, var, symbol);
 	
 		//define the figure and setting animator
-		Figure * figures = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6);
-		Figure * figure = new Square(size, 0.0f, 0.0f, red, green, blue);
-		Animator anim(figure, rate); 
-
+		
+		Figure * figure;
+		if (figureType == "Square") {
+			 figure = new Square(size, 0.0f, 0.0f, red, green, blue);
+		}
+		else if (figureType == "Hexagon") {
+			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6); 
+		}
+		else {
+			//by default generate a square
+			figure = new Square(size, 0.0f, 0.0f, red, green, blue);
+		}
+		Animator anim(figure, rate);
 		//preparing the figure to be displayed
+		
 		VertexBuffer vb(figure->GetPositions(), figure->GetVertexCount() * sizeof(float));
 		GLCall(glEnableVertexAttribArray(0));
 		GLCall(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0));
-		IndexBuffer ib(figure->GetIndex(), 6);
+		
+		IndexBuffer ib(figure->GetIndex(), 18);
 		
 		//shader setting
 		ShaderProgramSource source = ParseShader("res/shader/Basic.shader");
@@ -195,7 +209,7 @@ int main(void)
 			anim.SetAnimation(animation); 
 			vb.UpdateBufferData(figure->GetPositions(), figure->GetVertexCount() * sizeof(float)); 
 			ib.Bind(); 
-			GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+			GLCall(glDrawElements(GL_TRIANGLES, figure->GetIndexCount() , GL_UNSIGNED_INT, nullptr));
 			glfwSwapBuffers(window);		
 			glfwPollEvents();
 		}

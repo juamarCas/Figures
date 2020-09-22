@@ -32,6 +32,10 @@ float Figure::GetSize() {
 	return size/2/10;
 }
 
+int Figure::GetIndexCount() {
+	return indexCount; 
+}
+
 int Figure::GetVertexCount() {
 	return vertexCount; 
 }

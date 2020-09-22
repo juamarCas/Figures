@@ -28,6 +28,7 @@ public:
 	virtual void SetIndex();
 	virtual int GetVertexCount();
 
+	int GetIndexCount(); 
 	
 	unsigned int* GetIndex(); 
 
@@ -42,6 +43,7 @@ public:
 	float * GetPositions();
 	//center of the figure
 	float * GetCenter(); 
+
 
 	
 
