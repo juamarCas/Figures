@@ -48,7 +48,7 @@ void Animator::HVAnimation(bool horizontal) {
 }
 
 void Animator::SetAnimation(std::string name) {
-	if (name.compare("side") == 0) {
+	if (name.compare("Side") == 0) {
 		HVAnimation(true); 
 	}
 	else if (name.compare("UpDown") == 0) {

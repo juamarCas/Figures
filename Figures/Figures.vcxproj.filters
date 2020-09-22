@@ -60,4 +60,7 @@
   <ItemGroup>
     <None Include="res\shader\Basic.shader" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\config.txt" />
+  </ItemGroup>
 </Project>

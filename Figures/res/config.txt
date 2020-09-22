@@ -1,0 +1,10 @@
+-Figure type = Square
+
+-Color red =  1.0
+-Color green = 0.0
+-Color blue = 0.0
+
+-Rate rate = 0.005
+-Animation animation = UpDown
+-Size size = 10
+

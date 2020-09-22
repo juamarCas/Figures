@@ -6,7 +6,7 @@ private:
 	
 public: 
 	
-	Square(float size, float centerX, float centerY); 
+	Square(float size, float centerX, float centerY, float red, float green, float blue); 
 	void SetPos() override;
 	void SetIndex() override; 
 };

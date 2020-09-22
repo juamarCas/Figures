@@ -12,6 +12,9 @@
 #include "Square.h"
 #include "Animator.h"
 
+#define WIDTH 640
+#define HEIGHT 640
+
 struct ShaderProgramSource {
 	std::string vertexSource;
 	std::string fragmentSource;
@@ -83,11 +86,28 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 	return program;
 }
 
+
+template<typename T>
+void SetConfiguration(T *value, std::string& filepath, std::string param, std::string var, std::string symbol) {
+	std::ifstream configFile(filepath); 
+	std::stringstream ss; 
+	std::string line; 
+	while (getline(configFile, line)) {
+		if (line.find(param) != std::string::npos) {
+			if (line.find(var) != std::string::npos) {
+				std::size_t f = line.find(symbol);
+				ss.str(line);
+				ss.seekg(f + 1);
+				ss >> *value; 
+			}
+		}
+	}
+}
 int main(void)
 {
 
 	GLFWwindow* window;
-	float rate = 0.001; 
+	
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -95,7 +115,7 @@ int main(void)
 
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(640, 480, "Figures", NULL, NULL);
+	window = glfwCreateWindow(WIDTH, HEIGHT, "Figures", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -110,15 +130,42 @@ int main(void)
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 	{
+		//setting up graphics properties
+		float rate = 0.001f, size = 5.0f;
+		float red = 0.2f, green = 0.3f, blue = 0.8f;
+		std::string animation = "Side"; 
+		std::string figureType = "Square"; 
+
+		//configuring variables
+		std::string path = "res/config.txt"; 
+		std::string param;
+		std::string var;
+		std::string symbol = "=";
+
+		//Configuring Colors
+		param = "-Color"; 
+		var = "red"; 
+		SetConfiguration(&red, path, param, var, symbol);	
+		var = "green";
+		symbol = "=";
+		SetConfiguration(&green, path, param, var, symbol);	
+		var = "blue"; 
+		SetConfiguration(&blue, path, param, var, symbol);
+		
+		//configuring animations
+		param = "-Animation"; 
+		var = "animation"; 
+		SetConfiguration(&animation, path, param, var, symbol); 
+		
 		//define the figure and setting animator
-		Figure * square = new Square(4.0f, 0.0f, 0.0f);
-		Animator anim(square, rate); 
+		Figure * figure = new Square(5.0f, 0.0f, 0.0f, red, green, blue);
+		Animator anim(figure, rate); 
 
 		//preparing the figure to be displayed
-		VertexBuffer vb(square->GetPositions(), square->GetVertexCount() * sizeof(float));
+		VertexBuffer vb(figure->GetPositions(), figure->GetVertexCount() * sizeof(float));
 		GLCall(glEnableVertexAttribArray(0));
 		GLCall(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0));
-		IndexBuffer ib(square->GetIndex(), 6);
+		IndexBuffer ib(figure->GetIndex(), 6);
 		
 		//shader setting
 		ShaderProgramSource source = ParseShader("res/shader/Basic.shader");
@@ -128,14 +175,15 @@ int main(void)
 
 		GLCall(int location = glGetUniformLocation(shader, "u_Color"));
 		ASSERT(location != -1);
-		GLCall(glUniform4f(location, 0.2f, 0.3f, 0.8f, 1.0f));
+		float * rgb = figure->GetColors(); 
+		GLCall(glUniform4f(location, rgb[0], rgb[1], rgb[2], 1.0f));
 		
 		
 		while (!glfwWindowShouldClose(window))
 		{			
 			glClear(GL_COLOR_BUFFER_BIT);
-			anim.SetAnimation("UpDown"); 
-			vb.UpdateBufferData(square->GetPositions(), square->GetVertexCount() * sizeof(float)); 
+			anim.SetAnimation(animation); 
+			vb.UpdateBufferData(figure->GetPositions(), figure->GetVertexCount() * sizeof(float)); 
 			ib.Bind(); 
 			GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 			glfwSwapBuffers(window);		

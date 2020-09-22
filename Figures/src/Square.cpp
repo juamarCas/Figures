@@ -1,6 +1,6 @@
 #include "Square.h"
 
-Square::Square(float size, float centerX, float centerY ): Figure(size, centerX, centerY){
+Square::Square(float size, float centerX, float centerY, float red, float green, float blue ): Figure(size, centerX, centerY, red, green, blue){
 
 	//Defining the figure, in this case is a square
 	vertexCount = 8;
