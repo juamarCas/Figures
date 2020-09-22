@@ -1,7 +1,7 @@
 #include "Animator.h"
 
 Animator::Animator(Figure * figure, float velocity) {
-	this->velocity = velocity; 
+	this->velocity = velocity/100; 
 	this->figure = figure;
 	
 }
@@ -18,21 +18,21 @@ void Animator::HVAnimation(bool horizontal) {
 	
 	c = figure->GetCenter(); 
 	if (horizontal) {
-		if (c[0] > 1 - figure->GetSize()) {
+		if (c[0] > 1 - figure->GetWidth()) {
 			dx = -velocity;
 			dy = 0;
 		}
-		else if (c[0] < figure->GetSize() - 1 || dx == 0) {
+		else if (c[0] < figure->GetWidth() - 1 || dx == 0) {
 			dx = velocity;
 			dy = 0;
 		}
 	}
 	else {
-		if (c[1] > 1 - figure->GetSize()) {
+		if (c[1] > 1 - figure->GetHeight()) {
 			dx = 0;
 			dy = -velocity;
 		}
-		else if (c[1] < figure->GetSize() - 1 || dy == 0) {
+		else if (c[1] < figure->GetHeight() - 1 || dy == 0) {
 			dx = 0;
 			dy = velocity;
 		}

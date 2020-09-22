@@ -14,6 +14,6 @@ public:
 	Polygon(float size, float centerX, float centerY, float red, float green, float blue, int numberOfSides);
 	void SetPos() override;
 	void SetIndex() override;
-
+	
 	int GetNumberOfSides(); 
 };

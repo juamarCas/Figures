@@ -26,7 +26,11 @@ public:
 
 	virtual void SetPos();
 	virtual void SetIndex();
+
 	virtual int GetVertexCount();
+
+	virtual float GetWidth(); 
+	virtual float GetHeight(); 
 
 	int GetIndexCount(); 
 	

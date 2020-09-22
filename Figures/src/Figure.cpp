@@ -66,4 +66,12 @@ void Figure::SetIndex() {
 
 }
 
+float Figure::GetHeight() {
+	return GetSize();	
+}
+
+float Figure::GetWidth() {
+	return GetSize(); 
+}
+
 

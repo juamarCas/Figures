@@ -64,6 +64,6 @@ void Polygon::SetIndex() {
 
 	for (int i = 0; i < (numberOfSides + 1) * 2; i+= 2) {
 		std::cout << "Pos X: " << position[i] << " pos Y: " << position[i + 1] << std::endl;
-	}
+	}	
 	
 }

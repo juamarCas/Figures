@@ -9,7 +9,7 @@
 #include "Renderer.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
-#include "Square.h"
+#include "Rectangle.h"
 #include "Polygon.h"
 #include "Animator.h"
 
@@ -109,7 +109,7 @@ int main(void)
 
 	GLFWwindow* window;
 	
-	glfwSwapInterval(1); 
+	//glfwSwapInterval(1); 
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -134,6 +134,7 @@ int main(void)
 	{
 		//setting up graphics properties
 		float rate = 0.001, size = 4;
+		float cx = 0.0, cy = 0.0; //center x and center Y
 		float red = 0.5, green = 0.1, blue = 0.5;
 		std::string animation = "Side"; 
 		std::string figureType = "Square"; 
@@ -165,7 +166,7 @@ int main(void)
 		SetConfiguration(&size, path, param, var, symbol);
 
 		var = "rate"; 
-		SetConfiguration(&rate, path, param, var, symbol);
+		SetConfiguration(&rate, path, param, var, symbol); 
 
 		var = "figure"; 
 		SetConfiguration(&figureType, path, param, var, symbol);
@@ -174,7 +175,8 @@ int main(void)
 		
 		Figure * figure;
 		if (figureType == "Square") {
-			 figure = new Square(size, 0.0f, 0.0f, red, green, blue);
+			//a square is a rectangle with the same size
+			 figure = new Rectangle(size, 0.0f, 0.0f, red, green, blue, size, size);
 		}
 		else if (figureType == "Hexagon") {
 			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6); 
@@ -185,7 +187,7 @@ int main(void)
 		}
 		else {
 			//by default generate a square
-			figure = new Square(size, 0.0f, 0.0f, red, green, blue);
+			figure = new Rectangle(size, 0.0f, 0.0f, red, green, blue, size, size);
 		}
 		Animator anim(figure, rate);
 
