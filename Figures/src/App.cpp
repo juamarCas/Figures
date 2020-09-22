@@ -104,6 +104,7 @@ void SetConfiguration(T *value, std::string& filepath, std::string param, std::s
 		}
 	}
 }
+
 int main(void)
 {
 
@@ -136,6 +137,7 @@ int main(void)
 		float rate = 0.001, size = 4;
 		float cx = 0.0, cy = 0.0; //center x and center Y
 		float red = 0.5, green = 0.1, blue = 0.5;
+		float animSize = 0.0; 
 		std::string animation = "Side"; 
 		std::string figureType = "Square"; 
 
@@ -170,9 +172,37 @@ int main(void)
 
 		var = "figure"; 
 		SetConfiguration(&figureType, path, param, var, symbol);
-	
-		//define the figure and setting animator
-		
+
+		param = "-Animation"; 
+		var = "size"; 
+		SetConfiguration(&animSize, path, param, var, symbol);
+
+		//checking limits
+		if (animSize < 0) {
+			animSize = -animSize; // not negative values 
+		}
+
+		if (red < 0 || red > 1) {
+			red = 0.0; 
+		}
+
+		if (green < 0 || green > 1) {
+			green = 0.0;
+		}
+
+		if (blue < 0 || blue > 1) {
+			blue = 0.0; 
+		}
+
+		if (rate < 0) {
+			rate = 0.0; 
+		}
+
+		if (size < 0) {
+			size = 1.0; 
+		}
+
+		//define the figure and setting animator	
 		Figure * figure;
 		if (figureType == "Square") {
 			//a square is a rectangle with the same size
@@ -189,7 +219,8 @@ int main(void)
 			//by default generate a square
 			figure = new Rectangle(size, 0.0f, 0.0f, red, green, blue, size, size);
 		}
-		Animator anim(figure, rate);
+		
+		Animator anim(figure, rate, animSize);
 
 		//preparing the figure to be displayed
 		VertexBuffer vb(figure->GetPositions(), figure->GetVertexCount() * sizeof(float));

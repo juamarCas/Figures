@@ -1,11 +1,13 @@
 
--Color red =  1.0
--Color green = 0.5
--Color blue = 1.0
+-Color red =  0.8
+-Color green = 0.4
+-Color blue = 0.3
 
 -Characteristic figure = Hexagon
--Characteristic rate = 1
+-Characteristic rate = 0.8
 -Characteristic size = 4
--Characteristic animation = UpDown
+-Characteristic animation = Circular
+
+-Animation size = 0
 
 
