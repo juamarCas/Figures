@@ -109,6 +109,7 @@ int main(void)
 
 	GLFWwindow* window;
 	
+	glfwSwapInterval(1); 
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -132,10 +133,10 @@ int main(void)
 	std::cout << glGetString(GL_VERSION) << std::endl;
 	{
 		//setting up graphics properties
-		float rate, size;
-		float red, green, blue;
-		std::string animation; 
-		std::string figureType; 
+		float rate = 0.001, size = 4;
+		float red = 0.5, green = 0.1, blue = 0.5;
+		std::string animation = "Side"; 
+		std::string figureType = "Square"; 
 
 		//config variables
 		std::string path = "res/config.txt"; 
@@ -176,7 +177,11 @@ int main(void)
 			 figure = new Square(size, 0.0f, 0.0f, red, green, blue);
 		}
 		else if (figureType == "Hexagon") {
-			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 16); 
+			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6); 
+		}
+		else if (figureType == "Circle") {
+			//a polygon class with many sides can be seen as a circle
+			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 32);
 		}
 		else {
 			//by default generate a square

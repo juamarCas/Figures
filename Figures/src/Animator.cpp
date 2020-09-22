@@ -8,11 +8,8 @@ Animator::Animator(Figure * figure, float velocity) {
 
 void Animator::Move(float dx, float dy, float *c) {
 	//c is the center of the figure
-	for (int i = 0; i < figure->GetVertexCount(); i += 2) {
 		c[0] += dx; 
 		c[1] += dy; 
-		 
-	}
 	figure->SetCenter(c);
 	figure->SetPos(); 
 }

@@ -5,6 +5,8 @@ Square::Square(float size, float centerX, float centerY, float red, float green,
 	//Defining the figure, in this case is a square
 	vertexCount = 8;
 	indexCount = 6; 
+	position = new float[vertexCount];
+	index = new unsigned int[indexCount];
 	SetPos(); 
 	SetIndex(); 
 }
@@ -12,8 +14,6 @@ Square::Square(float size, float centerX, float centerY, float red, float green,
 void Square::SetPos()  {
 	
 	//with the center, it obtains the vertex
-	position = new float[8];
-	
 	position[0] = centerX - size / 2.0f / 10.0f;
 	position[1] = centerY - size / 2.0f / 10.0f; //0
 	position[2] = centerX + size / 2.0f / 10.0f;
@@ -27,7 +27,7 @@ void Square::SetPos()  {
 }
 
 void Square::SetIndex() {
-	index = new unsigned int[6];
+	
 	index[0] = 0;
 	index[1] = 1;
 	index[2] = 2;

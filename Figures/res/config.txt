@@ -3,8 +3,8 @@
 -Color green = 0.5
 -Color blue = 1.0
 
--Characteristic figure = Hexagon
--Characteristic rate = 0.001
+-Characteristic figure = Square
+-Characteristic rate = 0.01
 -Characteristic size = 4
 -Characteristic animation = UpDown
 
