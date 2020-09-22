@@ -137,7 +137,7 @@ int main(void)
 		std::string animation; 
 		std::string figureType; 
 
-		//configuring variables
+		//config variables
 		std::string path = "res/config.txt"; 
 		std::string symbol = "=";
 		std::string param;
@@ -176,20 +176,20 @@ int main(void)
 			 figure = new Square(size, 0.0f, 0.0f, red, green, blue);
 		}
 		else if (figureType == "Hexagon") {
-			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6); 
+			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 16); 
 		}
 		else {
 			//by default generate a square
 			figure = new Square(size, 0.0f, 0.0f, red, green, blue);
 		}
 		Animator anim(figure, rate);
+
 		//preparing the figure to be displayed
-		
 		VertexBuffer vb(figure->GetPositions(), figure->GetVertexCount() * sizeof(float));
 		GLCall(glEnableVertexAttribArray(0));
 		GLCall(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0));
 		
-		IndexBuffer ib(figure->GetIndex(), 18);
+		IndexBuffer ib(figure->GetIndex(), figure->GetIndexCount());
 		
 		//shader setting
 		ShaderProgramSource source = ParseShader("res/shader/Basic.shader");
