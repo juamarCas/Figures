@@ -215,7 +215,7 @@ int main(void)
 		Figure * figure;
 		
 		if (figureType == "Square") {
-			//a square is a rectangle with the same size
+			//a square is a rectangle which sides are the same size
 			 figure = new Rectangle(size,cx, cy, red, green, blue, size, size);
 		}
 		else if (figureType == "Hexagon") {
