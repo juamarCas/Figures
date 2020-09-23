@@ -20,9 +20,9 @@ The way the user have to specify a parameter is: <br/>
 
 |    Command      |  Variable  | Possible values | Default Values  |           Description           |
 |-----------------|:----------:|:---------------:|:---------------:|:-------------------------------:|
-|  -Color         |    red     |    0.0 - 1.0    |       0.5       | How much of red color           |
-|                 |    blue    |    0.0 - 1.0    |       0.5       | How much of green color         |
-|                 |    green   |    0.0 - 1.0    |       0.5       | How much of blue color          |
+|  -Color         |    red     |    0.0 - 1.0    |       0.5       | Red value                       |
+|                 |    blue    |    0.0 - 1.0    |       0.5       | Green value                     |
+|                 |    green   |    0.0 - 1.0    |       0.5       | Blue value                      |
 | -Charasteristic |   figure   |    Triangle     |      Square     | Which figure should be displayed|
 |                 |            |    Circle       |                 |                                 |
 |                 |            |    Square       |                 |                                 |
