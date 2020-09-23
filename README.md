@@ -18,21 +18,23 @@ This are all the parámeters you can use to modify the config.txt: <br/>
 The way the user have to specify a parameter is: <br/>
 -Command Variable = value<br/>
 
-|    Command      |  Variable  | Possible values | Default Values  |
-|-----------------|:----------:|:---------------:|:---------------:|
-|  -Color         |    red     |    0.0 - 1.0    |       0.5       |
-|                 |    blue    |    0.0 - 1.0    |       0.5       |
-|                 |    green   |    0.0 - 1.0    |       0.5       |
-| -Charasteristic |   figure   |    Triangle     |      Square     |
-|                 |            |    Circle       |                 |
-|                 |            |    Square       |                 | 
-|                 |            |    Hexagon      |                 |
-|                 |    size    |    0.0 - 10.0   |       4.0       |
-|                 |    rate    |    0.0 - 10.0   |       5.0       |
-|                 |  animation |       Side      |       Side      | 
-|                 |            |      UpDown     |                 |
-|                 |            |      Circular   |                 |
-|                 |            |        Box      |                 |
+|    Command      |  Variable  | Possible values | Default Values  |           Description           |
+|-----------------|:----------:|:---------------:|:---------------:|:-------------------------------:|
+|  -Color         |    red     |    0.0 - 1.0    |       0.5       | How much of red color           |
+|                 |    blue    |    0.0 - 1.0    |       0.5       | How much of green color         |
+|                 |    green   |    0.0 - 1.0    |       0.5       | How much of blue color          |
+| -Charasteristic |   figure   |    Triangle     |      Square     | Which figure should be displayed|
+|                 |            |    Circle       |                 |                                 |
+|                 |            |    Square       |                 |                                 |
+|                 |            |    Hexagon      |                 |                                 |
+|                 |    size    |    0.0 - 10.0   |       4.0       | Size of the figure              |
+|                 |    rate    |    0.0 - 10.0   |       5.0       | Velocity of animation *         |
+|                 |  animation |       Side      |       Side      | Type of animation               | 
+|                 |            |      UpDown     |                 |                                 |
+|                 |            |      Circular   |                 |                                 |
+|                 |            |        Box      |                 |                                 |
+
+* The velocity of the animation could vary depending of the GPU, in case is to fast reduce the value of rate to something like 0.1
 
 ##### Example
 Example 1:<br/>
