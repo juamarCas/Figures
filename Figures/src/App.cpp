@@ -120,7 +120,7 @@ int main(void)
 
 	GLFWwindow* window;
 	
-	//glfwSwapInterval(1); 
+	glfwSwapInterval(1); 
 
 	/* Initialize the library */
 	if (!glfwInit())
