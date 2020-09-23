@@ -55,8 +55,34 @@ This are all the parámeters you can use to modify the config.txt: <br/>
 |                 |            |                 |                 |
 |                 |    size    |    0.0 - 10.0   |       4.0       |
 |                 |    rate    |    0.0 - 10.0   |       5.0       |
-|                 |            |                 |                 |
 |                 |  animation |       Side      |       Side      | 
 |                 |            |      UpDown     |                 |
 |                 |            |      Circular   |                 |
 |                 |            |        Box      |                 |
+
+##### Example
+Example 1:<br/>
+```
+-Color red =  0.8
+-Color green = 0.4
+-Color blue = 0.3
+
+-Characteristic figure = Triangle
+-Characteristic rate = 2
+-Characteristic size = 4
+-Characteristic animation = Box
+
+```
+
+Example 2:<br/>
+```
+-Color red =  0.5
+-Color green = 0.3
+-Color blue = 0.1
+
+-Characteristic figure = Circle
+-Characteristic rate = 4
+-Characteristic size = 6
+-Characteristic animation = Circular
+
+```
