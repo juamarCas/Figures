@@ -48,7 +48,7 @@ This are all the parámeters you can use to modify the config.txt: <br/>
 |  -Color         |    red     |    0.0 - 1.0    |       0.5       |
 |                 |    blue    |    0.0 - 1.0    |       0.5       |
 |                 |    green   |    0.0 - 1.0    |       0.5       |
-|-----------------|------------|-----------------|-----------------| 
+|:---------------:|:----------:|:---------------:|:---------------:| 
 | -Charasteristic |   figure   |    Triangle     |      Square     |
 |                 |            |    Circle       |                 |
 |                 |            |    Square       |                 | 
