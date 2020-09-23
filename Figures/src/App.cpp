@@ -147,7 +147,7 @@ int main(void)
 		//setting up graphics properties
 		float rate = 0.001, size = 4;
 		float cx = 0.0, cy = 0.0; //center x and center Y
-		float red = 0.5, green = 0.1, blue = 0.5;
+		float red = 0.5, green = 0.5, blue = 0.5;
 		float animSize = 0.0; 
 		std::string animation = "Side"; 
 		std::string figureType = "Square"; 
@@ -192,15 +192,15 @@ int main(void)
 		
 
 		if (red < 0 || red > 1) {
-			red = 0.0; 
+			red = 0.5; 
 		}
 
 		if (green < 0 || green > 1) {
-			green = 0.0;
+			green = 0.5;
 		}
 
 		if (blue < 0 || blue > 1) {
-			blue = 0.0; 
+			blue = 0.5; 
 		}
 
 		if (rate < 0 || rate > 10) {

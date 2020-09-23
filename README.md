@@ -35,7 +35,7 @@ The animator class has all the animation methods in it.
 
 ## Application execution
 The .exe file is in _Figures/Figures/Figures.exe_ you just need to double click on it. <br/>
-To reload the code after you modify the config.txt press __Enter__
+To reload the application after you modify the config.txt press __Enter__
 
 ### Configuration
 The config.txt is in _Figures/Figures/res/config.txt_ open it with a text editor to modify the parameters.
@@ -43,10 +43,21 @@ The config.txt is in _Figures/Figures/res/config.txt_ open it with a text editor
 #### Parameters
 This are all the parámeters you can use to modify the config.txt: <br/>
 
-| Command         |   Variable |
-|-----------------|:----------:|
-|  -Color         |    red     |
-|                 |    blue    |
-|                 |    green   |
-| -Charasteristic |  animation |
-
+|    Command      |  Variable  | Possible values | Default Values  |
+|-----------------|:----------:|:---------------:|:---------------:|
+|  -Color         |    red     |    0.0 - 1.0    |       0.5       |
+|                 |    blue    |    0.0 - 1.0    |       0.5       |
+|                 |    green   |    0.0 - 1.0    |       0.5       |
+|                 |            |                 |                 | 
+| -Charasteristic |   figure   |    Triangle     |      Square     |
+|                 |            |    Circle       |                 |
+|                 |            |    Square       |                 | 
+|                 |            |    Hexagon      |                 |
+|                 |            |                 |                 |
+|                 |    size    |    0.0 - 10.0   |       4.0       |
+|                 |    rate    |    0.0 - 10.0   |       5.0       |
+|                 |            |                 |                 |
+|                 |  animation |       Side      |       Side      | 
+|                 |            |      UpDown     |                 |
+|                 |            |      Circular   |                 |
+|                 |            |        Box      |                 |
