@@ -1,7 +1,7 @@
 # Figures
 This is an application where you from a .txt file choose what will be shown on the screen and how it will be shown.<br/>
 
-To see how this code was made, please read the [Documentation] (https://github.com/juamarCas/Figures/wiki/_new)
+To see how this code was made, please read the [Documentation](https://github.com/juamarCas/Figures/wiki/_new)
 
 ## Application execution
 The .exe file is in _Figures/Figures/Executable/Figures.exe_ you just need to double click on it. <br/>
