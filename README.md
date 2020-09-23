@@ -34,7 +34,7 @@ The way the user have to specify a parameter is: <br/>
 |                 |            |      Circular   |                 |                                 |
 |                 |            |        Box      |                 |                                 |
 
-* The velocity of the animation could vary depending of the GPU, in case is to fast reduce the value of rate to something like 0.1
+\* The velocity of the animation could vary depending of the GPU, in case is to fast reduce the value of rate to something like 0.1
 
 ##### Example
 Example 1:<br/>
