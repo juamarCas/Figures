@@ -28,10 +28,25 @@ The code has a class called Figure that is father class of all the shapes you ca
 2. Polygon<br/>    
 3. Triangle<br/>  
 
-This is in orther to have a cleaner code and in the future will be more easy to modify.  
+This is in orther to have a cleaner code and in the future will be more easy to modify. 
 
 ### Animator class
 The animator class has all the animation methods in it.  
 
+## Application execution
+The .exe file is in _Figures/Figures/Figures.exe_ you just need to double click on it. <br/>
+To reload the code after you modify the config.txt press __Enter__
 
+### Configuration
+The config.txt is in _Figures/Figures/res/config.txt_ open it with a text editor to modify the parameters.
+
+#### Parameters
+This are all the parámeters you can use to modify the config.txt: <br/>
+
+| Command         |   Variable |
+|-----------------|:----------:|
+|  -Color         |    red     |
+|                 |    blue    |
+|                 |    green   |
+| -Charasteristic |  animation |
 
