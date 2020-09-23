@@ -52,7 +52,6 @@ This are all the parámeters you can use to modify the config.txt: <br/>
 |                 |            |    Circle       |                 |
 |                 |            |    Square       |                 | 
 |                 |            |    Hexagon      |                 |
-|                 |            |                 |                 |
 |                 |    size    |    0.0 - 10.0   |       4.0       |
 |                 |    rate    |    0.0 - 10.0   |       5.0       |
 |                 |  animation |       Side      |       Side      | 
