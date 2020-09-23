@@ -1,6 +1,6 @@
 # Figures
 
-This application is part Of Timba Game's technical interview test. <br/>
+This application is part of Timba Game's technical interview test. <br/>
 
 Figures take some parameter from a text file and depending on what the user wrote, it will show a figure with a color and animation.<br/>
 
