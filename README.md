@@ -1,5 +1,5 @@
 # Figures
-this is an application where you from a .txt file choose what will be shown on the screen and how it will be shown.
+This is an application where you from a .txt file choose what will be shown on the screen and how it will be shown.
 
 ## Code design
 
@@ -10,13 +10,13 @@ The tools used to make this application are: GLEW and GLFW, in order to use Open
 Is an open source cross-platform C/C++ extension library. This library provides run-time mechanisms for determining which OpenGL extensions are supported on the target platform.<br/>  
 
 
-Link: (http://glew.sourceforge.net/)
+[GLEW] (http://glew.sourceforge.net/)
 
 #### GLFW 
 Is an open source multi-platform library for OpenGL, OpenGl ES and Vulkan development on the desktop. It provides a simple API for creating windows, contexts and surface, receiving input and events.<br/> 
 
 
-Link: (https://www.glfw.org/)
+[GLFW] (https://www.glfw.org/)
 
 #### OpenGL
 The version of OpenGL which this application was made is OpenGL 4.6.
