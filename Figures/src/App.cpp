@@ -16,6 +16,8 @@
 #define WIDTH 640
 #define HEIGHT 640
 
+#define TITLE "Figure"
+
 struct ShaderProgramSource {
 	std::string vertexSource;
 	std::string fragmentSource;
@@ -105,6 +107,8 @@ void SetConfiguration(T *value, std::string& filepath, std::string param, std::s
 	}
 }
 
+void keyCallback(GLFWwindow * window, int key, int scancode, int action, int mods); 
+
 int main(void)
 {
 
@@ -118,7 +122,8 @@ int main(void)
 
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(WIDTH, HEIGHT, "figure", NULL, NULL);
+	window = glfwCreateWindow(WIDTH, HEIGHT, TITLE, NULL, NULL);
+	glfwSetKeyCallback(window, keyCallback); 
 	if (!window)
 	{
 		glfwTerminate();
@@ -177,14 +182,8 @@ int main(void)
 		var = "figure"; 
 		SetConfiguration(&figureType, path, param, var, symbol);
 
-		param = "-Animation"; 
-		var = "size"; 
-		SetConfiguration(&animSize, path, param, var, symbol);
-
 		//checking limits
-		if (animSize < 0) {
-			animSize = -animSize; // not negative values 
-		}
+		
 
 		if (red < 0 || red > 1) {
 			red = 0.0; 
@@ -198,16 +197,17 @@ int main(void)
 			blue = 0.0; 
 		}
 
-		if (rate < 0) {
-			rate = 0.0; 
+		if (rate < 0 || rate > 10) {
+			rate = 5; 
 		}
 
-		if (size < 0) {
-			size = 1.0; 
+		if (size < 0 || size > 10) {
+			size = 4.0; 
 		}
 
 		//define the figure and setting animator	
 		Figure * figure;
+		
 		if (figureType == "Square") {
 			//a square is a rectangle with the same size
 			 figure = new Rectangle(size,cx, cy, red, green, blue, size, size);
@@ -259,4 +259,12 @@ int main(void)
 
 	glfwTerminate();
 	return 0;
+}
+
+void keyCallback(GLFWwindow * window, int key, int scancode, int action, int mods) {
+	if (key == GLFW_KEY_ENTER && action == GLFW_PRESS) {
+		//reset all
+		glfwTerminate();
+		main();
+	}
 }
