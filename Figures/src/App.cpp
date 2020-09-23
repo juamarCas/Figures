@@ -6,17 +6,23 @@
 #include <sstream>
 #include <math.h>
 
+
 #include "Renderer.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "Rectangle.h"
 #include "Polygon.h"
+#include "Triangle.h"
 #include "Animator.h"
+
 
 #define WIDTH 640
 #define HEIGHT 640
 
 #define TITLE "Figure"
+
+#define CIRCLE_RES 32 //resolution of the circle
+#define HEXAGON 6
 
 struct ShaderProgramSource {
 	std::string vertexSource;
@@ -213,13 +219,16 @@ int main(void)
 			 figure = new Rectangle(size,cx, cy, red, green, blue, size, size);
 		}
 		else if (figureType == "Hexagon") {
-			figure = new Polygon(size, cx, cy, red, green, blue, 6); 
+			figure = new Polygon(size, cx, cy, red, green, blue, HEXAGON); 
 		}
 		else if (figureType == "Circle") {
 			//a polygon class with many sides can be seen as a circle
-			figure = new Polygon(size, cx, cy, red, green, blue, 32);
+			figure = new Polygon(size, cx, cy, red, green, blue, CIRCLE_RES);
 		}
-		else {
+		else if (figureType == "Triangle") {
+			figure = new Triangle(size, cx, cy, red, green, blue); 
+		}
+		else{
 			//by default generate a square
 			figure = new Rectangle(size, cx, cy, red, green, blue, size, size);
 		}
@@ -252,6 +261,7 @@ int main(void)
 			vb.UpdateBufferData(figure->GetPositions(), figure->GetVertexCount() * sizeof(float)); 
 			ib.Bind(); 
 			GLCall(glDrawElements(GL_TRIANGLES, figure->GetIndexCount() , GL_UNSIGNED_INT, nullptr));
+			
 			glfwSwapBuffers(window);		
 			glfwPollEvents();
 		}

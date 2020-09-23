@@ -3,10 +3,10 @@
 -Color green = 0.4
 -Color blue = 0.3
 
--Characteristic figure = Square
+-Characteristic figure = Triangle
 -Characteristic rate = 2
 -Characteristic size = 4
--Characteristic animation = Side
+-Characteristic animation = Box
 
 
 
