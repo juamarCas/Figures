@@ -5,6 +5,7 @@
 class Figure {
 protected: 
 	float *position;
+
 	unsigned int *index;
 	float size; 
 	float velocity; 

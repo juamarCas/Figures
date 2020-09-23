@@ -1,7 +1,7 @@
 #include "Figure.h"
 
 
-Figure::Figure(float size, float centerY, float centerX, float red, float green, float blue) {
+Figure::Figure(float size, float centerX, float centerY, float red, float green, float blue) {
 	this->size = size;
 	this->velocity = velocity;
 	this->animationOP = animationOP; 	
@@ -10,6 +10,8 @@ Figure::Figure(float size, float centerY, float centerX, float red, float green,
 	this->red = red; 
 	this->green = green; 
 	this->blue = blue; 
+	
+	
 }
 Figure::~Figure() {
 
@@ -41,10 +43,9 @@ int Figure::GetVertexCount() {
 }
 
 float * Figure::GetCenter() {
-	float * c = new float[2]; 
+	float * c = new float[2];
 	c[0] = centerX; 
 	c[1] = centerY; 
-
 	return c; 
 }
 

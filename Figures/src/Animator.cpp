@@ -8,6 +8,15 @@ Animator::Animator(Figure * figure, float velocity, float size) {
 	this->velocity = velocity/100; 
 	this->figure = figure;
 	auxAngle = 0; 
+
+	destinyPoint = new float[2]; 
+
+	destinyPoint[0] = 1 - figure->GetSize(); 
+	destinyPoint[1] = -(1 - figure->GetSize()); 
+	
+
+	currentTarget = 1;
+	
 	
 }
 
@@ -18,8 +27,8 @@ void Animator::Move(float *c) {
 }
 
 void Animator::HVAnimation(bool horizontal) {
+	c = figure->GetCenter();
 	
-	c = figure->GetCenter(); 
 	if (horizontal) {
 		if (c[0] > 1 - figure->GetWidth() - size) {
 			dx = -velocity;
@@ -52,8 +61,8 @@ void Animator::HVAnimation(bool horizontal) {
 
 void Animator::CircularAnimation(float radius) {
 	c = figure->GetCenter();
-	dx = ((1 - radius) - size) * cos(auxAngle * PI / 180); 
-	dy = ((1 - radius) - size) * sin(auxAngle * PI / 180);
+	dx = ((1 - radius)) * cos(auxAngle * PI / 180); 
+	dy = ((1 - radius)) * sin(auxAngle * PI / 180);
 	
 	auxAngle -= velocity * 100; 
 
@@ -65,6 +74,51 @@ void Animator::CircularAnimation(float radius) {
 	Move(c); 
 }
 
+void Animator::BoxAnimation() {
+	c = figure->GetCenter();
+
+	if (c[1] >= destinyPoint[0] && c[0] < 0) {
+		currentTarget = 2;
+	}
+	else if (c[1] <= destinyPoint[1] && c[0] > 0) {
+		currentTarget = 4;
+	}
+	else if (c[0] >= destinyPoint[0] && c[1] > 0) {
+		currentTarget = 3;
+	}
+	else if (c[0] <= destinyPoint[1] && c[1] < 0) {
+		currentTarget = 1;
+	}
+
+	switch (currentTarget)
+	{
+		case 1: 
+			dx = 0; 
+			dy = velocity; 
+			break; 
+		case 2: 
+			dx = velocity; 
+			dy = 0; 
+			break; 
+		case 3: 
+			dx = 0; 
+			dy = -velocity; 
+			break; 
+		case 4: 
+			dx = -velocity; 
+			dy = 0; 
+			break; 
+	default:
+		break;
+	}
+	
+	
+	
+	c[0] += dx;
+	c[1] += dy;
+	Move(c);
+}
+
 void Animator::SetAnimation(std::string name) {
 	if (name.compare("Side") == 0) {
 		
@@ -74,7 +128,10 @@ void Animator::SetAnimation(std::string name) {
 		HVAnimation(false); 
 	}
 	else if (name.compare("Circular") == 0) {
-		CircularAnimation(figure->GetSize()); 
+		CircularAnimation(figure->GetSize() - size); 
+	}
+	else if (name.compare("Box") == 0) {
+		BoxAnimation(); 
 	}
 }
 

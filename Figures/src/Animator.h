@@ -13,6 +13,10 @@ private:
 	//center of the figure
 	float * c; 
 
+	//box destiny points
+	float * destinyPoint; 
+	int currentTarget; 
+
 	//changes i x and y coordinates
 	float dx; 
 	float dy;
@@ -23,6 +27,7 @@ public:
 	void Move(float *c); 
 	void HVAnimation(bool isHorizontal); 
 	void SetAnimation(std::string name); 
-	void CircularAnimation(float radius); 
+	void CircularAnimation(float radius);
+	void BoxAnimation(); 
 
 };

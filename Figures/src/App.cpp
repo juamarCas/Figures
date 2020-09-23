@@ -161,12 +161,16 @@ int main(void)
 		
 		//configuring animations and other characteristics
 		param = "-Characteristic"; 
-		var = "animation"; 
-		SetConfiguration(&animation, path, param, var, symbol); 
-
-		var = "size"; 
+	
+		var = "size";
 		SetConfiguration(&size, path, param, var, symbol);
 
+		var = "animation";
+		SetConfiguration(&animation, path, param, var, symbol); 
+		if (animation.compare("Box") == 0) {
+			cx = -1 + size / 2 / 10; 
+		}
+	
 		var = "rate"; 
 		SetConfiguration(&rate, path, param, var, symbol); 
 
@@ -206,18 +210,18 @@ int main(void)
 		Figure * figure;
 		if (figureType == "Square") {
 			//a square is a rectangle with the same size
-			 figure = new Rectangle(size, 0.0f, 0.0f, red, green, blue, size, size);
+			 figure = new Rectangle(size,cx, cy, red, green, blue, size, size);
 		}
 		else if (figureType == "Hexagon") {
-			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 6); 
+			figure = new Polygon(size, cx, cy, red, green, blue, 6); 
 		}
 		else if (figureType == "Circle") {
 			//a polygon class with many sides can be seen as a circle
-			figure = new Polygon(size, 0.0f, 0.0f, red, green, blue, 32);
+			figure = new Polygon(size, cx, cy, red, green, blue, 32);
 		}
 		else {
 			//by default generate a square
-			figure = new Rectangle(size, 0.0f, 0.0f, red, green, blue, size, size);
+			figure = new Rectangle(size, cx, cy, red, green, blue, size, size);
 		}
 		
 		Animator anim(figure, rate, animSize);
