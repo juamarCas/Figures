@@ -1,10 +1,13 @@
 # Figures
-This is an application where you from a .txt file choose what will be shown on the screen and how it will be shown.<br/>
+
+This application is part Of Timba Game's technical interview test. <br/>
+
+Figures take some parameter from a text file and depending on what the user wrote, it will show a figure with a color and animation.<br/>
 
 To see how this code was made, please read the [Documentation](https://github.com/juamarCas/Figures/wiki/_new)
 
 ## Application execution
-The .exe file is in _Figures/Figures/Executable/Figures.exe_ you just need to double click on it. <br/>
+The .exe file is in _Figures/Figures/Executable/Figures.exe_ you just need to double click it. <br/>
 To reload the application after you modify the config.txt press __Enter__
 
 ### Configuration
@@ -12,6 +15,8 @@ The config.txt is in _Figures/Figures/Executable/res/config.txt_ open it with a 
 
 #### Parameters
 This are all the parámeters you can use to modify the config.txt: <br/>
+The way the user have to specify a parameter is: <br/>
+-Command Variable = value<br/>
 
 |    Command      |  Variable  | Possible values | Default Values  |
 |-----------------|:----------:|:---------------:|:---------------:|
