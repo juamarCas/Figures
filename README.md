@@ -34,11 +34,11 @@ This is in orther to have a cleaner code and in the future will be more easy to 
 The animator class has all the animation methods in it.  
 
 ## Application execution
-The .exe file is in _Figures/Figures/Figures.exe_ you just need to double click on it. <br/>
+The .exe file is in _Figures/Figures/Executable/Figures.exe_ you just need to double click on it. <br/>
 To reload the application after you modify the config.txt press __Enter__
 
 ### Configuration
-The config.txt is in _Figures/Figures/res/config.txt_ open it with a text editor to modify the parameters.
+The config.txt is in _Figures/Figures/Executable/res/config.txt_ open it with a text editor to modify the parameters.
 
 #### Parameters
 This are all the parámeters you can use to modify the config.txt: <br/>
