@@ -4,7 +4,7 @@ This application is part of Timba Game's technical interview test. <br/>
 
 Figures take some parameter from a text file and depending on what the user wrote, it will show a figure with a color and animation.<br/>
 
-To see how this code was made, please read the [Documentation](https://github.com/juamarCas/Figures/wiki/_new)
+To see how this code was made, please read the [Documentation](https://github.com/juamarCas/Figures/wiki#documentation)
 
 ## Application execution
 The .exe file is in _Figures/Figures/Figures.exe_ you just need to double click it. <br/>
