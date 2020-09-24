@@ -15,8 +15,7 @@ The config.txt is in _Figures/Figures/res/config.txt_ open it with a text editor
 
 #### Parameters
 This are all the parámeters you can use to modify the config.txt: <br/>
-The way the user have to specify a parameter is: <br/>
--Command Variable = value<br/>
+
 
 |    Command      |  Variable  | Possible values | Default Values  |           Description           |
 |-----------------|:----------:|:---------------:|:---------------:|:-------------------------------:|
@@ -35,6 +34,9 @@ The way the user have to specify a parameter is: <br/>
 |                 |            |        Box      |                 |                                 |
 
 \* The velocity of the animation could vary depending of the GPU, in case is too fast reduce the value of rate too something like 0.1
+
+The way the user have to specify a parameter is: <br/>
+_-Command Variable = value_<br/>
 
 ##### Example
 Example 1:<br/>
