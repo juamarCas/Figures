@@ -33,7 +33,7 @@ This are all the parámeters you can use to modify the config.txt: <br/>
 |                 |            |      Circular   |                 |                                 |
 |                 |            |        Box      |                 |                                 |
 
-\* The velocity of the animation could vary depending of the GPU, in case is too fast reduce the value of rate too something like 0.1
+\* The velocity of the animation could vary depending of the GPU, in case is too fast reduce the value of rate to something like 0.1
 
 The way the user have to specify a parameter is: <br/>
 _-Command Variable = value_<br/>
